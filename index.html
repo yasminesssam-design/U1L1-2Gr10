@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>محترف Mohtarf | الصف الأول الثانوي - الوحدة الأولى</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14213d; --card:#ffffff; --soft:#eef3ff; --blue:#2b59ff; --purple:#7b3ff2; --green:#12b76a; --red:#f04438; --gold:#ffb703; --orange:#ff7a1a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:18px}
+body{font-family:'Cairo','Segoe UI',Tahoma,Arial,sans-serif;color:var(--ink);min-height:100vh;
+  background:linear-gradient(135deg,#0b1a5c,#3a1c9c,#0a6fb8,#0b1a5c);background-size:400% 400%;animation:bgmove 18s ease infinite;overflow-x:hidden}
+@keyframes bgmove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+#bg span{position:absolute;bottom:-60px;font-family:'Courier New',monospace;font-weight:700;color:rgba(255,255,255,.14);animation:floatup linear infinite}
+@keyframes floatup{to{transform:translateY(-115vh) rotate(25deg)}}
+#fx{position:fixed;inset:0;z-index:50;pointer-events:none}
+#flash{position:fixed;inset:0;z-index:49;pointer-events:none;background:rgba(240,68,56,.0);transition:background .5s}
+header{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+.logo .mark{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#ffb703,#ff7a1a);display:grid;place-items:center;font-size:30px;font-weight:900;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.3);transform:rotate(-6deg)}
+.logo b{font-size:1.7rem;font-weight:900;letter-spacing:.5px;line-height:1}
+.logo small{display:block;font-size:.75rem;opacity:.85;font-weight:600;letter-spacing:2px;direction:ltr}
+.tools{display:flex;gap:8px}
+.tbtn{border:0;border-radius:14px;padding:8px 14px;font:inherit;font-weight:700;cursor:pointer;background:rgba(255,255,255,.18);color:#fff;backdrop-filter:blur(4px);font-size:.9rem}
+.tbtn:hover{background:rgba(255,255,255,.3)}
+main{position:relative;z-index:2;max-width:940px;margin:0 auto;padding:8px 14px 60px}
+.card{background:var(--card);border-radius:26px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.28);margin-bottom:18px}
+.hero{text-align:center;color:#fff;padding:10px 6px 4px}
+.hero h1{font-size:2.1rem;font-weight:900;line-height:1.4}
+.hero h1 small{display:block;font-size:1.05rem;font-weight:600;opacity:.9;direction:ltr}
+.name-box{background:#fff;border-radius:22px;padding:18px;margin:16px auto;max-width:560px;box-shadow:0 10px 30px rgba(0,0,0,.25);text-align:center}
+.name-box label{display:block;font-weight:800;font-size:1.15rem;margin-bottom:8px}
+.name-box label small{display:block;font-size:.85rem;font-weight:600;color:#556;direction:ltr}
+.name-box input{width:100%;font:inherit;font-size:1.3rem;padding:12px 16px;border:3px solid #cfd9ff;border-radius:16px;text-align:center;outline:none}
+.name-box input:focus{border-color:var(--blue)}
+.shake{animation:shake .5s}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-12px)}40%{transform:translateX(12px)}60%{transform:translateX(-9px)}80%{transform:translateX(9px)}}
+.lessons{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+@media(max-width:640px){.lessons{grid-template-columns:1fr}.hero h1{font-size:1.6rem}}
+.lbtn{border:0;cursor:pointer;font:inherit;color:#fff;border-radius:26px;padding:26px 16px;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,.3);transition:transform .2s}
+.lbtn:hover{transform:translateY(-6px) scale(1.02)}
+.lbtn .ic{font-size:3.4rem;display:block;animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.lbtn h2{font-size:1.5rem;font-weight:900;margin-top:6px}
+.lbtn p{font-size:1.05rem;font-weight:700;margin-top:4px}
+.lbtn p.en{direction:ltr;font-weight:600;opacity:.92;font-size:.95rem}
+.lbtn.l1{background:linear-gradient(135deg,#2b59ff,#6b3cf0)}
+.lbtn.l2{background:linear-gradient(135deg,#ff7a1a,#f0387a)}
+.lbtn .cnt{display:inline-block;margin-top:10px;background:rgba(255,255,255,.25);padding:4px 14px;border-radius:20px;font-size:.9rem;font-weight:700}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.back{border:0;border-radius:14px;padding:9px 16px;font:inherit;font-weight:800;cursor:pointer;background:#fff;color:var(--ink)}
+.hello{color:#fff;font-weight:800;font-size:1.05rem}
+.tabs{display:flex;gap:10px;margin-bottom:14px}
+.tab{flex:1;border:0;border-radius:18px;padding:14px 8px;font:inherit;font-weight:900;font-size:1.1rem;cursor:pointer;background:rgba(255,255,255,.22);color:#fff}
+.tab small{display:block;font-size:.8rem;font-weight:600;direction:ltr}
+.tab.on{background:#fff;color:var(--blue);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+/* explanation */
+.ex{border-radius:24px;padding:20px;margin-bottom:16px;background:#fff;box-shadow:0 10px 28px rgba(0,0,0,.22);border-right:10px solid var(--c,#2b59ff);animation:pop .5s both}
+@keyframes pop{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.ex h3{font-size:1.45rem;font-weight:900;color:var(--c,#2b59ff);display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.ex h3 .ic{font-size:2rem}
+.ex h3 small{display:block;width:100%;font-size:.95rem;font-weight:700;color:#667;direction:ltr;text-align:left}
+.ar{font-size:1.2rem;line-height:1.95;font-weight:600}
+.en{font-size:1rem;line-height:1.7;direction:ltr;text-align:left;color:#3b4a6b;background:#f3f6ff;border-radius:12px;padding:8px 12px;margin:6px 0 12px;font-family:'Segoe UI',Arial,sans-serif;font-weight:500}
+body.noen .en{display:none}
+.ex ul{padding-right:24px;margin:6px 0}
+.en ul{padding-right:0;padding-left:22px}
+.ex li{margin:4px 0}
+.hl{background:#fff3bf;padding:0 6px;border-radius:6px;font-weight:800}
+.eg{background:#e9fbf1;border:2px dashed var(--green);border-radius:14px;padding:8px 14px;margin:8px 0;font-weight:700}
+.eg.en{background:#e9fbf1;color:#0b6b41}
+.ladder{display:flex;flex-direction:column;gap:6px;align-items:stretch}
+.step{border-radius:16px;padding:12px 16px;color:#fff;font-weight:700}
+.step b{font-size:1.25rem;display:block}
+.step span{display:block;direction:ltr;text-align:left;font-size:.92rem;opacity:.95;font-weight:500}
+.step .sar{display:block;direction:rtl;text-align:right;font-size:1.05rem;opacity:1;font-weight:600}
+body.noen .step span:not(.sar){display:none}
+.s1{background:linear-gradient(90deg,#2b59ff,#4f7bff)}.s2{background:linear-gradient(90deg,#7b3ff2,#a06bff)}.s3{background:linear-gradient(90deg,#12b76a,#39d98a)}
+.arrow{text-align:center;font-size:1.6rem;animation:bob 1.6s infinite}
+table.t{width:100%;border-collapse:collapse;margin:8px 0;font-size:1rem}
+table.t th{background:var(--c,#2b59ff);color:#fff;padding:8px;font-weight:800}
+table.t td{border:2px solid #dfe6ff;padding:8px;text-align:center;font-weight:600;vertical-align:top}
+table.t td small{display:block;direction:ltr;color:#556;font-weight:500}
+body.noen table.t td small{display:none}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:8px 0}
+@media(max-width:640px){.grid3{grid-template-columns:1fr}}
+.mini{border-radius:16px;padding:12px;background:#f6f8ff;border:3px solid var(--mc,#2b59ff)}
+.mini .mic{font-size:2rem}
+.mini h4{font-size:1.1rem;font-weight:900;color:var(--mc,#2b59ff)}
+.mini h4 small{display:block;direction:ltr;text-align:left;font-size:.85rem;color:#667;font-weight:700}
+.mini p{font-size:1rem;line-height:1.7;font-weight:600}
+.mini p.en{font-size:.9rem;padding:6px 8px;margin:4px 0}
+.chk li{list-style:none;margin:6px 0}
+.chk .en li{list-style:none}
+.gobtn{display:block;width:100%;border:0;border-radius:22px;padding:18px;font:inherit;font-weight:900;font-size:1.4rem;cursor:pointer;color:#fff;background:linear-gradient(135deg,#12b76a,#0fa3b1);box-shadow:0 10px 26px rgba(0,0,0,.28);margin-top:6px}
+.gobtn small{display:block;font-size:.9rem;font-weight:600;direction:ltr}
+.gobtn:hover{transform:scale(1.02)}
+/* quiz */
+.qhead{display:flex;justify-content:space-between;align-items:center;color:#fff;font-weight:800;margin-bottom:8px;gap:8px;flex-wrap:wrap}
+.pbar{height:16px;background:rgba(255,255,255,.25);border-radius:12px;overflow:hidden;margin-bottom:14px}
+.pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffb703,#12b76a);border-radius:12px;transition:width .5s}
+.qcard{animation:pop .4s both}
+.qtag{display:inline-block;background:var(--soft);color:var(--blue);font-weight:800;border-radius:12px;padding:3px 12px;font-size:.85rem;margin-bottom:8px}
+.ctx{background:#fff8e1;border:2px solid var(--gold);border-radius:16px;padding:10px 14px;margin-bottom:12px}
+.ctx .ar{font-size:1.1rem;line-height:1.9}
+.ctx .en{background:#fff2c6;font-size:.95rem}
+.qtxt{font-size:1.55rem;font-weight:900;line-height:1.7}
+.qen{direction:ltr;text-align:left;font-size:1.1rem;color:#3b4a6b;font-weight:600;margin:4px 0 14px;font-family:'Segoe UI',Arial,sans-serif}
+body.noen .qen,body.noen .oen{display:none}
+.hint{font-size:.95rem;font-weight:700;color:#7b3ff2;margin-bottom:8px}
+.opts{display:grid;gap:10px;margin-top:8px}
+.opts.two{grid-template-columns:1fr 1fr}
+@media(max-width:560px){.opts.two{grid-template-columns:1fr}}
+.opt{display:flex;align-items:center;gap:12px;width:100%;border:3px solid #d7e0ff;background:#f6f8ff;border-radius:18px;padding:12px 14px;cursor:pointer;font:inherit;text-align:right;color:var(--ink);transition:transform .15s,background .2s,border-color .2s}
+.opt:hover:not(.lock){transform:scale(1.02);border-color:var(--blue);background:#eaf0ff}
+.opt .bd{flex:0 0 auto;min-width:42px;height:42px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:900;font-size:1.15rem;padding:0 6px}
+.opt .tx{flex:1}
+.opt .oar{display:block;font-size:1.3rem;font-weight:800;line-height:1.5}
+.opt .oen{display:block;direction:ltr;text-align:left;font-size:.98rem;color:#4a5a80;font-weight:600;font-family:'Segoe UI',Arial,sans-serif}
+.opt.sel{border-color:var(--purple);background:#efe6ff}
+.opt.ok{background:#d3f9e4;border-color:var(--green);animation:okpulse .6s}
+.opt.ok .bd{background:var(--green)}
+.opt.no{background:#ffe0dd;border-color:var(--red);animation:shake .5s}
+.opt.no .bd{background:var(--red)}
+.opt.miss{border-color:var(--green);border-style:dashed;background:#f0fff6}
+.opt.lock{cursor:default}
+@keyframes okpulse{0%{transform:scale(1)}40%{transform:scale(1.05)}100%{transform:scale(1)}}
+.tfbtn .oar{font-size:1.6rem;text-align:center}
+.tfbtn .oen{text-align:center}
+.fb{margin-top:16px;border-radius:20px;padding:14px 16px;animation:pop .4s both}
+.fb.good{background:#d3f9e4;border:3px solid var(--green)}
+.fb.bad{background:#ffe0dd;border:3px solid var(--red)}
+.fb .big{font-size:1.6rem;font-weight:900}
+.fb .big small{font-size:1rem;font-weight:700;direction:ltr;display:inline-block;margin-inline-start:8px}
+.fb .ca{font-weight:800;margin-top:6px;font-size:1.1rem}
+.fb .exl{margin-top:6px;font-size:1.05rem;font-weight:600;line-height:1.8}
+.fb .exl.en{background:rgba(255,255,255,.6);font-size:.95rem}
+.nextrow{display:flex;gap:10px;margin-top:12px}
+.btn{border:0;border-radius:18px;padding:14px 22px;font:inherit;font-weight:900;font-size:1.2rem;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--blue),var(--purple));box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.btn small{display:block;font-size:.75rem;font-weight:600;direction:ltr}
+.btn.green{background:linear-gradient(135deg,#12b76a,#0fa3b1)}
+.btn.wa{background:linear-gradient(135deg,#25d366,#128c7e)}
+.btn.grey{background:linear-gradient(135deg,#6b7a99,#4a5670)}
+.btn:hover{transform:scale(1.03)}
+.btn.full{flex:1}
+.emo{position:fixed;left:50%;top:45%;font-size:6rem;z-index:60;pointer-events:none;transform:translate(-50%,-50%);animation:emofly 1.3s ease-out forwards}
+@keyframes emofly{0%{opacity:0;transform:translate(-50%,-30%) scale(.3)}25%{opacity:1;transform:translate(-50%,-50%) scale(1.2)}100%{opacity:0;transform:translate(-50%,-160%) scale(1)}}
+.score{position:fixed;bottom:14px;left:14px;z-index:5;background:#fff;border-radius:16px;padding:6px 14px;font-weight:900;box-shadow:0 6px 16px rgba(0,0,0,.3);display:none}
+/* result */
+.res{text-align:center}
+.res .trophy{font-size:5rem;animation:bob 1.6s infinite}
+.res h2{font-size:2rem;font-weight:900}
+.res .sc{font-size:3.4rem;font-weight:900;color:var(--blue);direction:ltr}
+.res .stars{font-size:2.4rem;letter-spacing:6px}
+.res .msg{font-size:1.3rem;font-weight:800;margin:8px 0}
+.res .wrong{background:#fff4f3;border-radius:14px;padding:8px 12px;margin:10px 0;font-weight:700}
+.res .btns{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<div id="bg"></div>
+<canvas id="fx"></canvas>
+<div id="flash"></div>
+
+<header>
+  <a class="logo" href="#" onclick="goHome();return false">
+    <div class="mark">م</div>
+    <div><b>محترف</b><small>MOHTARF</small></div>
+  </a>
+  <div class="tools">
+    <button class="tbtn" id="btnEN" onclick="toggleEN()">🌐 English ✓</button>
+    <button class="tbtn" id="btnSND" onclick="toggleSND()">🔊 الصوت</button>
+  </div>
+</header>
+
+<main id="app"></main>
+<div class="score" id="livescore"></div>
+
+<script>
+/* ============ إعدادات ============ */
+const WA_NUMBER = '201099920517';   // 01099920517 بصيغة دولية (مصر)
+let studentName = '';
+let showEN = true, soundOn = true;
+
+/* ============ الخلفية المتحركة ============ */
+(function(){
+  const bg=document.getElementById('bg');
+  const chars=['0','1','01','10','{ }','</>','@','#','💾','📡','💻','🔒','ℹ️','101'];
+  for(let i=0;i<34;i++){
+    const s=document.createElement('span');
+    s.textContent=chars[Math.floor(Math.random()*chars.length)];
+    s.style.left=Math.random()*100+'%';
+    s.style.fontSize=(18+Math.random()*44)+'px';
+    s.style.animationDuration=(12+Math.random()*22)+'s';
+    s.style.animationDelay=(-Math.random()*30)+'s';
+    bg.appendChild(s);
+  }
+})();
+
+/* ============ الصوت ============ */
+let ac=null;
+function audio(){ if(!ac){ try{ac=new (window.AudioContext||window.webkitAudioContext)();}catch(e){return null;} } if(ac.state==='suspended') ac.resume(); return ac; }
+function tone(f,t0,d,type,vol){
+  if(!soundOn) return; const c=audio(); if(!c) return;
+  const o=c.createOscillator(), g=c.createGain(), t=c.currentTime+t0;
+  o.type=type||'sine'; o.frequency.setValueAtTime(f,t);
+  g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(vol||0.25,t+0.02); g.gain.exponentialRampToValueAtTime(0.0001,t+d);
+  o.connect(g); g.connect(c.destination); o.start(t); o.stop(t+d+0.05);
+}
+function sndOK(){ [523.25,659.25,783.99,1046.5].forEach((f,i)=>tone(f,i*0.1,0.28,'triangle',0.28)); tone(1568,0.42,0.4,'sine',0.15); }
+function sndNO(){ tone(220,0,0.25,'sawtooth',0.22); tone(165,0.18,0.35,'sawtooth',0.22); tone(110,0.4,0.45,'square',0.14); }
+function sndClick(){ tone(660,0,0.06,'sine',0.12); }
+function sndWin(){ [523.25,659.25,783.99,1046.5,783.99,1046.5,1318.5].forEach((f,i)=>tone(f,i*0.14,0.32,'triangle',0.3)); }
+function sndLose(){ [392,349.23,311.13,261.63].forEach((f,i)=>tone(f,i*0.22,0.4,'sine',0.25)); }
+function toggleSND(){ soundOn=!soundOn; document.getElementById('btnSND').textContent=soundOn?'🔊 الصوت':'🔇 صامت'; if(soundOn) sndClick(); }
+function toggleEN(){ showEN=!showEN; document.body.classList.toggle('noen',!showEN); document.getElementById('btnEN').textContent=showEN?'🌐 English ✓':'🌐 English ✗'; }
+
+/* ============ المؤثرات البصرية ============ */
+const fx=document.getElementById('fx'), fctx=fx.getContext('2d');
+function sizeFx(){ fx.width=innerWidth; fx.height=innerHeight; } sizeFx(); addEventListener('resize',sizeFx);
+let parts=[], raf=null;
+function confetti(n,big){
+  const cols=['#ffb703','#12b76a','#2b59ff','#f0387a','#7b3ff2','#25d366','#ff7a1a'];
+  for(let i=0;i<n;i++){
+    parts.push({x:innerWidth/2+(Math.random()-.5)*200,y:innerHeight*0.45,vx:(Math.random()-.5)*(big?18:12),vy:-Math.random()*(big?18:13)-4,
+      g:0.35+Math.random()*0.2,s:6+Math.random()*8,c:cols[Math.floor(Math.random()*cols.length)],r:Math.random()*6,vr:(Math.random()-.5)*0.4,life:100+Math.random()*60});
+  }
+  if(!raf) loopFx();
+}
+function loopFx(){
+  fctx.clearRect(0,0,fx.width,fx.height);
+  parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.r+=p.vr;p.life--;
+    fctx.save();fctx.translate(p.x,p.y);fctx.rotate(p.r);fctx.fillStyle=p.c;fctx.globalAlpha=Math.max(0,Math.min(1,p.life/40));fctx.fillRect(-p.s/2,-p.s/3,p.s,p.s*0.6);fctx.restore();});
+  parts=parts.filter(p=>p.life>0&&p.y<innerHeight+40);
+  if(parts.length){raf=requestAnimationFrame(loopFx);} else {raf=null;fctx.clearRect(0,0,fx.width,fx.height);}
+}
+function emojiPop(e){ const d=document.createElement('div'); d.className='emo'; d.textContent=e; document.body.appendChild(d); setTimeout(()=>d.remove(),1400); }
+function redFlash(){ const f=document.getElementById('flash'); f.style.background='rgba(240,68,56,.35)'; setTimeout(()=>f.style.background='rgba(240,68,56,0)',250); }
+
+/* ============ أدوات بناء المحتوى ============ */
+const AL=['أ','ب','ت','ث','ج','ح','خ','د'];
+const B=(ar,en)=>`<div class="ar">${ar}</div><div class="en" dir="ltr">${en}</div>`;
+const CLS3=[{ar:'1) بيانات',en:'1) Data'},{ar:'2) معلومات',en:'2) Information'},{ar:'3) معرفة',en:'3) Knowledge'}];
+const MED3=[{ar:'1) وسائط تعبير',en:'1) Expression media'},{ar:'2) وسائط نقل/إرسال',en:'2) Transmission media'},{ar:'3) وسائط تخزين',en:'3) Recording (storage) media'}];
+const PROP3=[{ar:'الثبات (الاستمرارية)',en:'Persistence'},{ar:'القدرة على الاستنساخ (التكرار)',en:'Reproducibility'},{ar:'الانتشار',en:'Propagation'}];
+const PROP3b=[{ar:'الاستمرارية (الثبات)',en:'Persistence'},{ar:'القابلية للتكرار (النسخ)',en:'Reproducibility'},{ar:'الانتشار',en:'Propagation'}];
+const TFO=[{ar:'✓ صحيحة',en:'✓ True'},{ar:'✗ خاطئة',en:'✗ False'}];
+let QID=0;
+function mc(src,ar,en,opts,ans,ea,ee,o){o=o||{};return Object.assign({t:'mc',src,ar,en,opts,ans,ea,ee,letters:o.letters||AL,noLetter:o.noLetter||false,ctx:o.ctx||null,two:o.two||false},{});}
+function tf(src,ar,en,isTrue,ea,ee,o){o=o||{};return {t:'tf',src,ar,en,opts:TFO,ans:isTrue?0:1,ea,ee,ctx:o.ctx||null,noLetter:true};}
+function mu(src,ar,en,opts,ans,ea,ee,o){o=o||{};return {t:'mu',src,ar,en,opts,ans,ea,ee,letters:AL,ctx:o.ctx||null};}
+
+/* ============ الدرس الأول: الأسئلة ============ */
+const OPT_TYPES3=[{ar:'وسائط التعبير',en:'Expression media'}];
+const media6=[{ar:'محرك أقراص USB',en:'USB drive'},{ar:'راديو',en:'Radio'},{ar:'هاتف',en:'Telephone'},{ar:'DVD',en:'DVD'},{ar:'فيديو',en:'Video'},{ar:'صوت',en:'Sound'}];
+const media6b=[{ar:'الإنترنت',en:'The Internet'},{ar:'كتابة نصية',en:'Written text'},{ar:'قرص USB',en:'USB disk'},{ar:'صوت',en:'Sound'},{ar:'راديو',en:'Radio'},{ar:'كتاب',en:'Book'}];
+const passage1={ar:'نحصل على <b>(أ) ......</b> مثل تنبؤات الطقس من مصادر مثل الصحف والتلفزيون، ونستخدمها كأساس لاتخاذ قرار بشأن أفعالنا. تنظّم التنبؤات الجوية <b>(ب) ......</b> مثل درجة الحرارة ومعدل هطول الأمطار وأنماط الضغط الجوي، وتضيف إليها معنى وقيمة. بالإضافة إلى ذلك، يمكن أن يكون هذا نتيجة لتراكم <b>(ت) ......</b> مثل «غالبًا ما تمطر في مايو ويونيو كل عام».',
+ en:'We get <b>(A) ......</b> such as weather forecasts from sources like newspapers and TV, and we use them as a basis for deciding what to do. Weather forecasts organize <b>(B) ......</b> such as temperature, rainfall and air-pressure patterns, and add meaning and value to them. This can also be the result of accumulated <b>(C) ......</b> such as “It often rains in May and June every year.”'};
+const blankOpts=[{ar:'الرسم البياني لدرجة الحرارة',en:'A temperature graph'},{ar:'درجة الحرارة',en:'The temperature'},{ar:'نتائج تحليل درجات الحرارة الدنيا على مدار الـ 20 عامًا الماضية',en:'Results of analysing minimum temperatures over the past 20 years'}];
+
+const Q1=[
+ mc('تحدّي معلوماتك 1','«قيم درجة الحرارة والرطوبة» هي:','“Temperature and humidity values” are:',CLS3,0,'أرقام خام = بيانات (Data).','Raw numbers = Data.',{noLetter:true}),
+ mc('تحدّي معلوماتك 1','«نتائج تحليل درجة الحرارة والرطوبة على مدى السنوات العشر الماضية» هي:','“Results of analysing temperature and humidity over the last ten years” are:',CLS3,1,'بيانات تم تحليلها وصار لها معنى = معلومات (Information).','Data that has been analysed and given meaning = Information.',{noLetter:true}),
+ mc('تحدّي معلوماتك 1','«توقعات الطقس» هي:','“The weather forecast” is:',CLS3,2,'معلومات تم تنظيمها لتساعدنا على اتخاذ قرارات وحل المشكلات = معرفة (Knowledge).','Organized information that helps us decide and solve problems = Knowledge.',{noLetter:true}),
+ mc('تحدّي معلوماتك 1','اختر العبارة <b>غير المناسبة</b> كخاصية للمعلومات:','Choose the statement that is <b>NOT</b> suitable as a property of information:',
+   [{ar:'لها شكل مثل الجسم المادي.',en:'It has a shape like a physical object.'},{ar:'المعنى أو القيمة تتغير اعتمادًا على المستلم.',en:'Its meaning or value changes depending on the receiver.'},{ar:'لها خاصية الثبات.',en:'It has the property of persistence.'},{ar:'لها خاصية الانتشار.',en:'It has the property of propagation.'}],0,
+   'على عكس الأشياء المادية، المعلومات ليس لها شكل. لذلك الإجابة (أ).','Unlike physical things, information has no shape. So the answer is (A).'),
+ mc('تحدّي معلوماتك 1','«حتى إذا اشتريت قرص موسيقى تجاري (CD)، لا يُسمح لك بعمل نسخ لتوزيعها على الأصدقاء.» هذا يرتبط بخاصية:','“Even if you buy a commercial music CD, you are not allowed to make copies to distribute to friends.” This is related to:',PROP3,1,'خاصية القدرة على النسخ بسهولة هي القدرة على الاستنساخ.','The ability to copy easily is called reproducibility.',{noLetter:true}),
+ mc('تحدّي معلوماتك 1','«يمكن إرسال رسائل البريد الإلكتروني على الفور إلى الخارج.» هذا يرتبط بخاصية:','“E-mails can be sent abroad instantly.” This is related to:',PROP3,2,'الإرسال الفوري ونشر المعلومة بسرعة = الانتشار.','Instant sending / fast spreading = propagation.',{noLetter:true}),
+ mc('تحدّي معلوماتك 1','«الشائعات حول الأشخاص والمعلومات الكاذبة يمكن أن تستمر إلى أجل غير مسمى.» هذا يرتبط بخاصية:','“Rumours about people and false information can continue indefinitely.” This is related to:',PROP3,0,'المعلومة بمجرد إنشائها لا تختفي أبدًا = الثبات (الاستمرارية).','Once created, information never fully disappears = persistence.',{noLetter:true}),
+ mc('تحدّي معلوماتك 2','«التلفزيون» هو:','“Television” is:',MED3,1,'التلفزيون ينقل المعلومات للناس = وسائط نقل/إرسال.','TV carries information to people = transmission media.',{noLetter:true}),
+ mc('تحدّي معلوماتك 2','«التخزين السحابي» هو:','“Cloud storage” is:',MED3,2,'يحفظ المعلومات = وسائط تخزين (تسجيل).','It saves information = recording (storage) media.',{noLetter:true}),
+ mc('تحدّي معلوماتك 2','«صورة» هي:','“A picture” is:',MED3,0,'الصورة وسيلة للتعبير عن المعلومات = وسائط تعبير.','A picture expresses information = expression media.',{noLetter:true}),
+ mc('تحدّي معلوماتك 2','«الإنترنت» هو:','“The Internet” is:',MED3,1,'الإنترنت ينقل المعلومات = وسائط نقل/إرسال.','The Internet carries information = transmission media.',{noLetter:true}),
+ mc('تحدّي معلوماتك 2','«حرف نصي» هو:','“A text character” is:',MED3,0,'الحروف والنص وسيلة تعبير عن المعلومات = وسائط تعبير.','Text is a way to express information = expression media.',{noLetter:true}),
+ mc('تحدّي معلوماتك 2','«كتاب» هو:','“A book” is:',MED3,1,'الكتاب ينقل المعلومات للقارئ = وسائط نقل/إرسال (كما في إجابة الكتاب).','A book carries information to the reader = transmission media (as in the book’s key).',{noLetter:true}),
+ mc('جرّب بنفسك 1','«نتائج الامتحان التجريبي» تُعتبر:','“The mock exam results” are:',CLS3,0,'أرقام ودرجات خام = بيانات.','Raw scores = Data.',{noLetter:true}),
+ mc('جرّب بنفسك 1','«نتائج تحليل القبول في المدرسة المطلوبة» تُعتبر:','“The results of the admission analysis for the desired school” are:',CLS3,1,'تحليل الدرجات أعطاها معنى نستخدمه في القرار = معلومات. (الكتاب لم يذكر مفتاح إجابة لهذا السؤال).','Analysing scores gives them meaning we use for a decision = Information. (The book gives no key for this one.)',{noLetter:true}),
+ mc('جرّب بنفسك 1','«درجات الامتحان التجريبي» تُعتبر:','“The mock exam scores” are:',CLS3,0,'أرقام خام = بيانات.','Raw numbers = Data.',{noLetter:true}),
+ mc('جرّب بنفسك 1','اختر العبارة <b>الصحيحة</b> عن خصائص المعلومات:','Choose the <b>correct</b> statement about the properties of information:',
+   [{ar:'1. لا تتمتع المعلومات بخاصية القابلية للنسخ.',en:'1. Information cannot be copied.'},{ar:'2. لا يتغير معنى المعلومات أو قيمتها حسب المستلم.',en:'2. The meaning or value of information does not change with the receiver.'},{ar:'3. المعلومات لها شكل مثل الأشياء الملموسة.',en:'3. Information has a shape like tangible things.'},{ar:'4. لا يمكن حذف المعلومات التي تم نشرها بسهولة.',en:'4. Information that has been published cannot be deleted easily.'}],3,
+   'العبارة 4 صحيحة: هذه خاصية الثبات (الاستمرارية).','Statement 4 is correct: this is persistence.',{noLetter:true}),
+ mc('جرّب بنفسك 1','«من الممكن نسخ الموسيقى والأفلام المتوفرة تجاريًا بكميات كبيرة دون أي تدهور في الجودة.» هذا:','“Commercial music and films can be copied in large quantities with no loss of quality.” This is:',PROP3b,1,'النسخ الكثير بسهولة = القابلية للتكرار.','Easy mass copying = reproducibility.',{letters:['أ','ب','ج']}),
+ mc('جرّب بنفسك 1','«تستمر الشائعات حول الناس ولا تختفي تمامًا.» هذا:','“Rumours about people continue and never fully disappear.” This is:',PROP3b,0,'لا تختفي = الاستمرارية.','Does not disappear = persistence.',{letters:['أ','ب','ج']}),
+ mc('جرّب بنفسك 1','«تنتشر المعلومات المنشورة على الإنترنت على نطاق واسع في فترة زمنية قصيرة.» هذا:','“Information posted on the Internet spreads widely in a short time.” This is:',PROP3b,2,'تنتشر بسرعة = الانتشار.','Spreads fast = propagation.',{letters:['أ','ب','ج']}),
+ mu('جرّب بنفسك 2','اختر <b>كل</b> الوسائط التي هي <b>وسائط تعبير</b>:','Choose <b>all</b> the items that are <b>expression media</b>:',media6,[4,5],'وسائط التعبير: الفيديو والصوت (وكذلك النص والصور).','Expression media: video and sound (also text and images).'),
+ mu('جرّب بنفسك 2','اختر <b>كل</b> الوسائط التي هي <b>وسائط نشر/إرسال</b>:','Choose <b>all</b> the items that are <b>transmission media</b>:',media6,[1,2],'وسائط النقل: الراديو والهاتف (وكذلك التلفزيون والإنترنت).','Transmission media: radio and telephone (also TV and the Internet).'),
+ mu('جرّب بنفسك 2','اختر <b>كل</b> الوسائط التي هي <b>وسائط تسجيل</b>:','Choose <b>all</b> the items that are <b>recording media</b>:',media6,[0,3],'وسائط التسجيل: محرك USB وأقراص DVD (وكذلك الورق والتخزين السحابي).','Recording media: USB drive and DVD (also paper and cloud storage).'),
+ mc('جرّب بنفسك 2','اختر الشرح المناسب لـ <b>الثقافة الإعلامية</b>:','Choose the correct explanation of <b>media literacy</b>:',
+   [{ar:'القدرة على قبول المعلومات التي تنشرها وسائل الإعلام دون مساءلة.',en:'The ability to accept information published by the media without questioning it.'},{ar:'القدرة على فهم معنى وخصائص الوسائط والتفسير الدقيق للمعلومات.',en:'The ability to understand the meaning and features of media and to interpret information accurately.'},{ar:'القدرة على التقاط المحتوى لتوزيع الوسائط.',en:'The ability to capture content to distribute media.'},{ar:'القدرة على استخدام الوسائط لتحرير المعلومات وفقًا لقصد المرسل.',en:'The ability to use media to edit information according to the sender’s intention.'}],1,
+   'الثقافة الإعلامية = فهم الوسائط وتفسير المعلومات القادمة منها بدقة (وليس تصديق كل شيء).','Media literacy = understanding media and interpreting its information accurately (not believing everything).'),
+ mc('تمرين 1','ما الذي يناسب الفراغ <b>(أ)</b> في الفقرة؟','What fits blank <b>(A)</b> in the passage?',blankOpts,0,'(أ) = معلومات مثل التنبؤات الجوية؛ والرسم البياني معلومة. (لا يوجد مفتاح في الكتاب).','(A) = information, like forecasts; a graph is information. (No key in the book.)',{ctx:passage1,letters:['أ','ب','ت']}),
+ mc('تمرين 1','ما الذي يناسب الفراغ <b>(ب)</b> في الفقرة؟','What fits blank <b>(B)</b> in the passage?',blankOpts,1,'(ب) = بيانات خام مثل درجة الحرارة.','(B) = raw data such as the temperature.',{ctx:passage1,letters:['أ','ب','ت']}),
+ mc('تمرين 1','ما الذي يناسب الفراغ <b>(ت)</b> في الفقرة؟','What fits blank <b>(C)</b> in the passage?',blankOpts,2,'(ت) = معرفة تتكون من تراكم نتائج التحليل عبر سنوات.','(C) = knowledge built from accumulated analysis results over years.',{ctx:passage1,letters:['أ','ب','ت']}),
+ mc('تمرين 1','«يمكن أن تستمر المعلومات الخاطئة بمجرد نشرها على الإنترنت إلى فترات طويلة.» هذا:','“False information can last a long time once posted on the Internet.” This is:',[{ar:'الاستمرارية',en:'Persistence'},{ar:'قابلية النسخ',en:'Reproducibility'},{ar:'الانتشار',en:'Propagation'}],0,'تبقى لفترات طويلة = الاستمرارية.','It stays for a long time = persistence.'),
+ mc('تمرين 1','«ليس فقط وسائل الإعلام بل الأفراد أيضًا قادرون الآن على نشر كميات كبيرة من المعلومات في جميع أنحاء العالم.» هذا:','“Not only the media but also individuals can now spread large amounts of information around the world.” This is:',[{ar:'الاستمرارية',en:'Persistence'},{ar:'قابلية النسخ',en:'Reproducibility'},{ar:'الانتشار',en:'Propagation'}],2,'نشر واسع = الانتشار.','Wide spreading = propagation.'),
+ mc('تمرين 1','«قام شخص بنسخ قرص مضغوط موسيقي متاح تجاريًا ووزعه على أصدقائه.» هذا:','“A person copied a commercial music CD and gave it to friends.” This is:',[{ar:'الاستمرارية',en:'Persistence'},{ar:'قابلية النسخ',en:'Reproducibility'},{ar:'الانتشار',en:'Propagation'}],1,'نسخ المحتوى بسهولة = قابلية النسخ (لكنه غير مسموح قانونًا!).','Copying content easily = reproducibility (but it is not legally allowed!).'),
+ tf('تمرين 1','تشير المعلومات الأولية إلى المعلومات التي تم الحصول عليها من خلال الدراسات الاستقصائية أو التحقيقات التي يجريها الشخص نفسه.','Primary information means information obtained through surveys or investigations that the person carries out himself/herself.',true,'صحيحة: المعلومات الأولية تأتي من تجربتك أو بحثك المباشر.','True: primary information comes from your own direct experience or research.'),
+ tf('تمرين 1','تُعتبر البيانات الإحصائية المنشورة على موقع جهاز الإحصاء معلومات <b>أولية</b>.','Statistical data published on a statistics bureau’s website counts as <b>primary</b> information.',false,'خاطئة: أنت لم تجمعها بنفسك، بل حصلت عليها من طرف آخر = معلومات ثانوية.','False: you did not collect it yourself; it came from someone else = secondary information.'),
+ tf('تمرين 1','تُعتبر المعلومات التي يعثر عليها شخص ما على موقع الويب معلومات <b>أولية</b>.','Information someone finds on a website counts as <b>primary</b> information.',false,'خاطئة: ما تجده على موقع ويب = معلومات ثانوية.','False: what you find on a website = secondary information.'),
+ tf('تمرين 1','تُعتبر المعلومات التي تم الحصول عليها من خلال طرف ثالث معلومات <b>ثانوية</b>.','Information obtained through a third party counts as <b>secondary</b> information.',true,'صحيحة: الكتب والصحف والتلفزيون كلها معلومات ثانوية.','True: books, newspapers and TV are all secondary information.'),
+ mu('تمرين 2','اختر <b>كل</b> ما يُصنَّف كـ <b>وسائط انتشار/إرسال</b>:','Choose <b>all</b> items classified as <b>transmission media</b>:',media6b,[0,4,5],'وسائط النقل: الإنترنت والراديو والكتاب. أما النص والصوت فهما وسائط تعبير، وقرص USB وسيط تخزين.','Transmission: the Internet, radio and book. Text and sound are expression media; a USB disk is a storage medium.')
+];
+
+/* ============ الدرس الثاني: الأسئلة ============ */
+const passage2={ar:'عند نقل المعلومات على الإنترنت، يجب أن تكون حذرًا جدًا في التعامل مع <b>[1] ......</b> الآخرين ومع الصور أو مقاطع الفيديو التي يمتلك فيها الآخرون <b>[2] ......</b>. بالإضافة إلى ذلك، تحتوي الصور ومقاطع الفيديو التي تم التقاطها بهاتف ذكي على ميزة تضيف معلومات مثل خط الطول وخط العرض لمكان التقاطها، ويُشار إليها باسم <b>[3] ......</b>. وهي مريحة لأنها تمكّن من تأكيد الموقع أو البحث عنه، لكن يجب الحذر لأن هناك خطر التعرف على عنوان منزلك.',
+ en:'When passing information on the Internet you must be very careful with other people’s <b>[1] ......</b> and with photos or videos in which others own the <b>[2] ......</b>. Also, photos and videos taken with a smartphone can include latitude and longitude of where they were taken, called a <b>[3] ......</b>. It is handy because it lets you confirm or search for the location, but be careful: there is a risk that your home address can be identified.'};
+const opts2a=[{ar:'حقوق المؤلف (Copyright)',en:'Copyright'},{ar:'المعلومات الشخصية (Personal Information)',en:'Personal Information'},{ar:'حقوق الملكية الصناعية (Industrial Property Rights)',en:'Industrial Property Rights'},{ar:'العلامة الجغرافية (Geotag)',en:'Geotag'}];
+const opts2a2=[opts2a[0],opts2a[1],opts2a[2],opts2a[3]];
+const pass3={ar:'<b>[1] ......</b> هو المصطلح للمفاهيم والتوجهات الأساسية اللازمة للقيام بأنشطة مناسبة في مجتمع المعلومات. حتى لو لم يكن شيء ما محظورًا بواسطة <b>[2] ......</b> فلا يزال يجب عليك الامتناع عن السلوك غير اللائق. عِلاوةً على ذلك، فإن المعلومات على الإنترنت <b>[3] ......</b> بسهولة، ومتى تم نشرها فإنها تميل <b>[4] ......</b>.',
+ en:'<b>[1] ......</b> is the term for the basic concepts and attitudes needed to act properly in an information society. Even if something is not prohibited by <b>[2] ......</b>, you should still refrain from improper behaviour. Moreover, information on the Internet <b>[3] ......</b> easily, and once posted it tends <b>[4] ......</b>.'};
+const opts2b=[{ar:'آداب المعلومات (Information etiquette)',en:'Information etiquette'},{ar:'أخلاقيات المعلومات (Information ethics)',en:'Information ethics'},{ar:'الانتشار (Spread)',en:'Spread'},{ar:'رد الفعل العنيف عبر الإنترنت (Online backlash)',en:'Online backlash'},{ar:'إلى الاختفاء (To disappear)',en:'To disappear'},{ar:'إلى عدم الاختفاء (Not to disappear)',en:'Not to disappear'},{ar:'القوانين (Laws)',en:'Laws'},{ar:'النظام (System)',en:'System'}];
+const L8=['أ','ب','ج','د','هـ','و','ز','ح'];
+
+const Q2=[
+ tf('تحدّي معلوماتك','وسائل التواصل الاجتماعي ليست أكثر من أداة خطيرة تسبب المتاعب.','Social media is nothing more than a dangerous tool that causes trouble.',false,'خاطئة: هي أداة مفيدة للتواصل، وقد تكون خطيرة فقط إذا استُخدمت بشكل غير صحيح.','False: it is a useful tool for communication; it is dangerous only if used incorrectly.'),
+ tf('تحدّي معلوماتك','هناك خطر أن يتم التعرف على عنوان منزلك من العلامات الجغرافية المضمنة في الصور ومقاطع الفيديو.','There is a risk that your home address could be identified from geotags embedded in photos and videos.',true,'صحيحة: العلامة الجغرافية تحمل مكان التصوير.','True: a geotag carries the place where the photo was taken.'),
+ tf('تحدّي معلوماتك','يمكنك كتابة ما تريد على لوحة إعلانات مجهولة الهوية لأنه لا يمكن لأحد أن يعرف من كتبها.','You can write anything you like on an anonymous bulletin board because nobody can know who wrote it.',false,'خاطئة: لا تنشر أبدًا محتوى تشهير أو معلومات مضللة أو شائعات، حتى لو كنت مجهول الهوية.','False: never post defamation, false information or rumours, even anonymously.'),
+ tf('تحدّي معلوماتك','كن مدركًا أن هناك أشخاصًا حقيقيين على الجانب الآخر من الإنترنت، وحاول مشاركة المعلومات مع مراعاة وجهة نظرهم.','Be aware there are real people on the other side of the Internet, and try to share information while considering their point of view.',true,'صحيحة: هذه هي روح أخلاقيات المعلومات.','True: this is the spirit of information ethics.'),
+ mc('جرّب بنفسك 1','[1] عند نقل المعلومات على الإنترنت يجب أن تكون حذرًا جدًا في التعامل مع ...... الآخرين.','[1] Be very careful when handling other people’s ...... on the Internet.',opts2a,1,'المعلومات الشخصية للآخرين يجب حمايتها.','Other people’s personal information must be protected.',{ctx:passage2,two:true}),
+ mc('جرّب بنفسك 1','[2] ... ومع الصور أو مقاطع الفيديو التي يمتلك فيها الآخرون ......','[2] ... and with photos or videos in which others own the ......',opts2a,0,'الصور والفيديو التي يملكها غيرك محمية بحقوق المؤلف.','Photos/videos owned by others are protected by copyright.',{ctx:passage2,two:true}),
+ mc('جرّب بنفسك 1','[3] معلومات خط الطول وخط العرض المضافة للصور ومقاطع الفيديو تسمى ......','[3] The longitude/latitude information added to photos and videos is called a ......',opts2a,3,'العلامة الجغرافية (Geotag) — مريحة لكنها تكشف موقعك.','Geotag — handy but it reveals your location.',{ctx:passage2,two:true}),
+ mc('جرّب بنفسك 1','اختر المصطلح العام للخدمات التي توفر منصات لتواصل الأفراد مع بعضهم البعض على الإنترنت:','Choose the general term for services that provide platforms where individuals communicate with each other online:',
+   [{ar:'الهندسة الاجتماعية (Social engineering)',en:'Social engineering'},{ar:'التسويق الاجتماعي (Social marketing)',en:'Social marketing'},{ar:'خدمة الشبكة الاجتماعية (Social networking service)',en:'Social networking service'},{ar:'نظام الشبكة الاجتماعية (Social network system)',en:'Social network system'}],2,'خدمة الشبكة الاجتماعية (SNS) = وسائل التواصل الاجتماعي.','Social networking service (SNS) = social media.'),
+ tf('جرّب بنفسك 1','يمكنك الكتابة بحرية على لوحة إعلانات مجهولة لأنه لا يمكن لأحد أن يعرف من كتبها.','You can write freely on an anonymous bulletin board because no one can know who wrote it.',false,'غير مناسبة أخلاقيًا: الكتابة المجهولة لا تعطيك حق الإساءة أو نشر الشائعات.','Not appropriate: being anonymous does not give you the right to abuse or spread rumours.'),
+ tf('جرّب بنفسك 1','مواقع الويب ملزمة قانونيًا بتقديم معلومات دقيقة دائمًا.','Websites are legally obliged to always provide accurate information.',false,'خاطئة: ليس كل ما على الإنترنت صحيحًا، فيجب التحقق منه.','False: not everything online is correct, so we must verify it.'),
+ tf('جرّب بنفسك 1','يجب أن تكون حذرًا ليس فقط مع معلوماتك الشخصية، ولكن أيضًا مع كيفية التعامل مع المعلومات الشخصية لغيرك.','You should be careful not only with your own personal information but also with how you handle other people’s personal information.',true,'مناسبة: احترام خصوصية الآخرين جزء من الأخلاقيات.','Appropriate: respecting others’ privacy is part of ethics.'),
+ tf('جرّب بنفسك 1','لأي محتوى، من الأفضل استخدام لوحة إعلانات لنشر المعلومات لأنها تصل إلى جمهور أكبر.','For any content, it is best to use a bulletin board to spread information because it reaches a larger audience.',false,'غير مناسبة: الوصول لجمهور أكبر لا يبرر نشر أي محتوى؛ يجب مراعاة الآخرين.','Not appropriate: reaching more people does not justify posting any content; consider others.'),
+ mc('جرّب بنفسك 1','اختر العبارة <b>المناسبة</b> لأخلاقيات استخدام الهاتف الذكي:','Choose the statement that is <b>appropriate</b> for smartphone ethics:',
+   [{ar:'قمت بتشغيل هاتف ذكي أثناء قيادة سيارتي.',en:'I used my smartphone while driving my car.'},{ar:'قمت بإيقاف تشغيل الهاتف الذكي في أماكن مثل دور السينما أو المتاحف الفنية.',en:'I turned off my smartphone in places like cinemas or art museums.'},{ar:'قمت بنشر تعليقات سلبية عن الآخرين على الإنترنت.',en:'I posted negative comments about others online.'},{ar:'أرسلت صورتي إلى غريب قابلته عبر الإنترنت.',en:'I sent my photo to a stranger I met online.'}],1,
+   'إيقاف الهاتف في السينما والمتاحف احترام للآخرين. أما القيادة بالهاتف فخطر، والتعليقات السلبية تنمر، وإرسال صورتك لغريب خطر.','Turning the phone off in cinemas/museums respects others. Phones while driving are dangerous, negative comments are bullying, and sending your photo to a stranger is risky.',{letters:['أ','ب','ج','د']}),
+ mc('تمرين 1','[1] ...... هو المصطلح للمفاهيم والتوجهات الأساسية اللازمة للقيام بأنشطة مناسبة في مجتمع المعلومات.','[1] ...... is the term for the basic concepts and attitudes needed for proper activity in an information society.',opts2b,1,'أخلاقيات المعلومات (Information ethics).','Information ethics.',{ctx:pass3,letters:L8,two:true}),
+ mc('تمرين 1','[2] حتى لو لم يكن شيء ما محظورًا بواسطة ...... فلا يزال يجب الامتناع عن السلوك غير اللائق.','[2] Even if something is not prohibited by ......, you should still avoid improper behaviour.',opts2b,6,'القوانين (Laws) — الأخلاق تسبق القانون.','Laws — ethics goes beyond the law.',{ctx:pass3,letters:L8,two:true}),
+ mc('تمرين 1','[3] المعلومات على الإنترنت ...... بسهولة.','[3] Information on the Internet ...... easily.',opts2b,2,'الانتشار (Spread) — المعلومات تنتشر بسهولة.','Spread — information spreads easily.',{ctx:pass3,letters:L8,two:true}),
+ mc('تمرين 1','[4] ومتى تم نشرها فإنها تميل ......','[4] and once posted, it tends ......',opts2b,5,'إلى عدم الاختفاء (Not to disappear).','Not to disappear.',{ctx:pass3,letters:L8,two:true}),
+ tf('تمرين 1','عند التفاعل عبر الشبكة، من المهم التواصل بشكل مناسب لتجنب سوء الفهم.','When interacting over the network, it is important to communicate appropriately to avoid misunderstandings.',true,'مناسبة: التواصل المهذب يقلل سوء الفهم.','Appropriate: polite communication reduces misunderstandings.'),
+ tf('تمرين 1','يمكنك الكتابة بحرية على لوحة إعلانات مجهولة لأنه لا يمكن لأحد أن يعرف من كتبها.','You can write freely on an anonymous bulletin board because no one can know who wrote it.',false,'غير مناسبة.','Not appropriate.'),
+ tf('تمرين 1','مواقع الويب مطلوبة قانونيًا لتقديم معلومات دقيقة دائمًا.','Websites are legally required to always provide accurate information.',false,'غير مناسبة: هذا غير صحيح.','Not appropriate: this is not true.'),
+ tf('تمرين 1','بما أن أحد المشاهير كان في مركز تسوق قريب، قمت بالتقاط صورة له ومشاركتها على وسائل التواصل الاجتماعي، وافترضت أن هذا أمر جيد بما أن الصورة التقطت في مكان عام.','Since a celebrity was in a nearby shopping mall, I took a photo and shared it on social media, assuming it was fine because it was taken in a public place.',false,'غير مناسبة: يجب احترام الخصوصية وحق الصورة حتى في الأماكن العامة.','Not appropriate: privacy and image rights must be respected even in public places.'),
+ mc('تمرين 1','اختر عبارة <b>صحيحة</b> فيما يتعلق باستخدام الإنترنت ووسائل التواصل الاجتماعي:','Choose the <b>correct</b> statement about using the Internet and social media:',
+   [{ar:'لا بأس بنسخ قرص مضغوط تجاري ونشره على وسائل التواصل الاجتماعي دون إذن.',en:'It is fine to copy a commercial CD and post it on social media without permission.'},{ar:'وسائل التواصل الاجتماعي ليست أكثر من أداة خطيرة تسبب المتاعب.',en:'Social media is nothing more than a dangerous tool that causes trouble.'},{ar:'إذا عشت حياة منفصلة عن الإنترنت، فلن تكون ضحية للجريمة الإلكترونية.',en:'If you live a life separate from the Internet, you will not be a victim of cybercrime.'},{ar:'عند نشر المعلومات، تأكد من أنها لا تنتهك خصوصية الآخرين.',en:'When posting information, make sure it does not violate others’ privacy.'}],3,
+   'الإجابة (ث): احترام خصوصية الآخرين هو القاعدة الصحيحة.','Answer (D): respecting others’ privacy is the right rule.')
+];
+
+/* ============ شرح الدروس ============ */
+const LESSONS=[
+{
+ id:1, name:'الدرس الأول', nameEn:'Lesson 1', title:'المعلومات والوسائط', titleEn:'Information and Media', icon:'📊', cls:'l1', Q:Q1,
+ cards:[
+  {c:'#2b59ff',ic:'🪜',t:'الفكرة الكبيرة',te:'The Big Idea',
+   h:B('في هذا الدرس نتعلم ٣ درجات: <span class="hl">بيانات ← معلومات ← معرفة</span>. كل درجة أعلى من اللي قبلها. مثال الطقس 🌤️:','In this lesson we learn 3 levels: <span class="hl">Data → Information → Knowledge</span>. Each level is higher than the last. The weather example 🌤️:')+
+   `<div class="ladder">
+     <div class="step s1"><b>🔢 بيانات | Data</b><span class="sar">أرقام خام: 32° و 65%</span><span>Raw numbers: 32° and 65%</span></div>
+     <div class="arrow">⬇️</div>
+     <div class="step s2"><b>📊 معلومات | Information</b><span class="sar">نتائج تحليل الحرارة والرطوبة لمدة 10 سنوات</span><span>Results of analysing 10 years of temperature and humidity</span></div>
+     <div class="arrow">⬇️</div>
+     <div class="step s3"><b>🧠 معرفة | Knowledge</b><span class="sar">توقعات الطقس: «غدًا حار ← سألبس ملابس خفيفة»</span><span>The weather forecast: “Tomorrow is hot → I'll wear light clothes”</span></div>
+   </div>`},
+  {c:'#2b59ff',ic:'🔢',t:'١) البيانات',te:'1) Data',
+   h:B('<span class="hl">البيانات (Data)</span> = <b>حقائق</b> بسيطة نكتبها بـ <b>أرقام</b> أو <b>حروف</b> أو <b>رموز</b>. لوحدها ما بتقولنا حاجة مفيدة.','<span class="hl">Data</span> = simple <b>facts</b> written with <b>numbers</b>, <b>letters</b> or <b>symbols</b>. On their own they don’t tell us anything useful.')+
+   B('<div class="eg">مثال: 32 &nbsp;|&nbsp; 65% &nbsp;|&nbsp; «أحمد» &nbsp;|&nbsp; درجات الامتحان 🥕 مثل الخضار قبل الطبخ</div>','<div class="eg">Examples: 32 | 65% | “Ahmed” | exam scores 🥕 like raw vegetables before cooking</div>')},
+  {c:'#7b3ff2',ic:'📊',t:'٢) المعلومات',te:'2) Information',
+   h:B('<span class="hl">المعلومات (Information)</span> = بيانات صار لها <b>معنى وقيمة</b> لمن يستقبلها، ونستخدمها <b>لاتخاذ قرار</b>.','<span class="hl">Information</span> = data that has <b>meaning and value</b> for the receiver, and we use it <b>to make decisions</b>.')+
+   B('<ul><li>مثال: «الجو حار غدًا» ← أقرر آخذ زجاجة مياه 💧</li><li>المعلومات <b>ليس لها شكل ثابت</b> مثل الكرسي أو الكتاب (لا نلمسها) 🪑</li><li>قيمتها <b>تختلف حسب الشخص</b>: توقع المطر مهم جدًا للفلاح 👨‍🌾 وأقل أهمية لمن سيبقى في البيت.</li></ul>','<ul><li>Example: “Tomorrow is hot” → I decide to take a water bottle 💧</li><li>Information has <b>no fixed shape</b> like a chair or a book (you can’t touch it) 🪑</li><li>Its value <b>depends on the receiver</b>: a rain forecast matters a lot to a farmer 👨‍🌾 and less to someone staying at home.</li></ul>')},
+  {c:'#ff7a1a',ic:'⭐',t:'٣) خصائص المعلومات الثلاث',te:'3) The 3 Properties of Information',
+   h:B('للمعلومات <b>٣ خصائص</b> مهمة جدًا (اُحفظها!):','Information has <b>3 very important properties</b> (memorize them!):')+
+   `<div class="grid3">
+     <div class="mini" style="--mc:#ff7a1a"><div class="mic">♾️</div><h4>الاستمرارية (الثبات)<small>Persistence</small></h4><p>بمجرد إنشاء المعلومة <b>لا تُمحى بالكامل</b>. مثل الشائعة أو الصورة التي انتشرت.</p><p class="en" dir="ltr">Once information exists, it can <b>never be fully erased</b> — like a rumour or a photo that spread.</p></div>
+     <div class="mini" style="--mc:#12b76a"><div class="mic">📋</div><h4>قابلية التكرار (الاستنساخ)<small>Reproducibility</small></h4><p>يمكن <b>نسخها</b> بسهولة وبكميات كبيرة. مثل نسخ أغنية أو فيلم.</p><p class="en" dir="ltr">It can be <b>copied</b> easily in large quantities — like copying a song or film.</p></div>
+     <div class="mini" style="--mc:#2b59ff"><div class="mic">📡</div><h4>الانتشار<small>Propagation</small></h4><p>تنتقل و<b>تنتشر بسرعة</b> عبر التلفزيون والصحف والإنترنت.</p><p class="en" dir="ltr">It <b>spreads quickly</b> via TV, newspapers and the Internet.</p></div>
+   </div>`+
+   B('<div class="eg">💡 حيلة للحفظ: ثبات = «ما تختفيش» ، تكرار = «تتنسخ» ، انتشار = «تتنقل بسرعة».<br>⚠️ حتى لو اشتريت CD أصلي، ما يحقلكش تنسخه وتوزعه على أصحابك!</div>','<div class="eg">💡 Memory trick: persistence = “never disappears”, reproducibility = “gets copied”, propagation = “travels fast”.<br>⚠️ Even if you buy an original CD, you are not allowed to copy it and hand it out to friends!</div>')},
+  {c:'#12b76a',ic:'🧠',t:'٤) المعرفة',te:'4) Knowledge',
+   h:B('<span class="hl">المعرفة (Knowledge)</span> = معلومات تم <b>تحليلها وتنظيمها</b> بشكل منهجي لتساعدنا في <b>حل المشكلات</b>.','<span class="hl">Knowledge</span> = information that has been <b>analysed and organized</b> systematically to help us <b>solve problems</b>.')+
+   B('<div class="eg">مثال: بعد سنوات من تسجيل الأمطار نعرف أن «الأمطار تكثر غالبًا في مايو ويونيو» ☔ فنستعد لها.</div>','<div class="eg">Example: after years of recording rain we know “it often rains in May and June” ☔ so we get ready.</div>')},
+  {c:'#f0387a',ic:'🔍',t:'٥) المعلومات الأولية والثانوية',te:'5) Primary and Secondary Information',
+   h:`<div class="grid3" style="grid-template-columns:1fr 1fr">
+     <div class="mini" style="--mc:#f0387a"><div class="mic">🧪</div><h4>أولية<small>Primary</small></h4><p>تحصل عليها <b>بنفسك</b> من تجربتك أو بحثك المباشر.</p><p class="en" dir="ltr">You get it <b>yourself</b> from your own experience or research.</p><p>مثال: تقارير التجارب، نتائج الاستطلاعات، جداول الاستبيانات.</p><p class="en" dir="ltr">E.g. experiment reports, survey results, questionnaire tables.</p></div>
+     <div class="mini" style="--mc:#7b3ff2"><div class="mic">📰</div><h4>ثانوية<small>Secondary</small></h4><p>تحصل عليها <b>عن طريق طرف ثالث</b> (شخص أو جهة أخرى).</p><p class="en" dir="ltr">You get it <b>through a third party</b> (another person or organization).</p><p>مثال: الكتب، الصحف، التلفزيون، مواقع الويب.</p><p class="en" dir="ltr">E.g. books, newspapers, TV, websites.</p></div>
+   </div>`+
+   B('⚠️ المعلومات الثانوية قد تختلف عن الأصل أو تحمل <b>تفسيرًا مضافًا</b>. لذلك نقارنها بعدة مصادر — وهذا اسمه <span class="hl">التحقق المتبادل (Cross-checking)</span> ✅','⚠️ Secondary information may differ from the original or contain <b>added interpretation</b>. So we compare it with several sources — this is called <span class="hl">Cross-checking</span> ✅')},
+  {c:'#0fa3b1',ic:'📺',t:'٦) الوسائط',te:'6) Media',
+   h:B('<span class="hl">الوسائط (Media)</span> = وسائل <b>لنقل المعلومات</b> إلى عدد من الأفراد. وهي ٣ أنواع:','<span class="hl">Media</span> = means of <b>carrying information</b> to a number of people. There are 3 types:')+
+   `<table class="t" style="--c:#0fa3b1"><tr><th>النوع<br><small>Type</small></th><th>وظيفته<br><small>Job</small></th><th>أمثلة<br><small>Examples</small></th></tr>
+    <tr><td><b>🗣️ وسائط التعبير</b><small>Expression media</small></td><td>نعبّر بها عن المعلومة<small>Used to express information</small></td><td>نص، صور، صوت، فيديو<small>Text, images, sound, video</small></td></tr>
+    <tr><td><b>📡 وسائط النقل/الإرسال</b><small>Transmission media</small></td><td>تنقل وتبادل المعلومات<small>Carry and exchange information</small></td><td>تلفزيون، راديو، صحف، كتب، هاتف، إنترنت<small>TV, radio, newspapers, books, phone, Internet</small></td></tr>
+    <tr><td><b>💾 وسائط التسجيل</b><small>Recording media</small></td><td>تسجّل وتخزّن المعلومات<small>Record and store information</small></td><td>ورق، أقراص، USB، DVD، تخزين سحابي<small>Paper, drives, USB, DVD, cloud storage</small></td></tr></table>`+
+   B('<div class="eg">💡 حيلة: تعبير = «أقول به» ، نقل = «أوصّل به» ، تسجيل = «أحفظ به».</div>','<div class="eg">💡 Trick: expression = “I say it with”, transmission = “I deliver it with”, recording = “I save it with”.</div>')},
+  {c:'#7b3ff2',ic:'🕵️',t:'٧) الثقافة الإعلامية',te:'7) Media Literacy',
+   h:B('<span class="hl">الثقافة الإعلامية (Media literacy)</span> = القدرة على <b>فهم الوسائط</b> و<b>تفسير المعلومات القادمة منها بدقة</b>. يعني: لا تصدّق كل ما تراه أو تسمعه، بل افهمه وتأكد منه 🧐.','<span class="hl">Media literacy</span> = the ability to <b>understand media</b> and <b>interpret its information accurately</b>. In other words: don’t believe everything you see or hear — understand it and check it 🧐.')},
+  {c:'#12b76a',ic:'✅',t:'الخلاصة',te:'Summary',
+   h:`<ul class="chk">
+    <li>🔢 بيانات = أرقام/حروف/رموز خام &nbsp;|&nbsp; <span dir="ltr">Data = raw facts</span></li>
+    <li>📊 معلومات = بيانات لها معنى نقرر بها &nbsp;|&nbsp; <span dir="ltr">Information = data with meaning</span></li>
+    <li>🧠 معرفة = معلومات محللة تحل المشكلات &nbsp;|&nbsp; <span dir="ltr">Knowledge = analysed information</span></li>
+    <li>⭐ خصائص المعلومات: استمرارية – تكرار – انتشار &nbsp;|&nbsp; <span dir="ltr">Persistence – Reproducibility – Propagation</span></li>
+    <li>🔍 أولية (بنفسك) / ثانوية (طرف ثالث) + التحقق المتبادل &nbsp;|&nbsp; <span dir="ltr">Primary / Secondary + cross-checking</span></li>
+    <li>📺 وسائط: تعبير – نقل – تسجيل &nbsp;|&nbsp; <span dir="ltr">Media: expression – transmission – recording</span></li>
+    <li>🕵️ الثقافة الإعلامية = تفسير المعلومات بدقة &nbsp;|&nbsp; <span dir="ltr">Media literacy = interpreting accurately</span></li></ul>`}
+ ]
+},
+{
+ id:2, name:'الدرس الثاني', nameEn:'Lesson 2', title:'أخلاقيات المعلومات', titleEn:'Information Ethics', icon:'🛡️', cls:'l2', Q:Q2,
+ cards:[
+  {c:'#ff7a1a',ic:'⚖️',t:'١) ما هي أخلاقيات المعلومات؟',te:'1) What is Information Ethics?',
+   h:B('<span class="hl">أخلاقيات المعلومات (Information Ethics)</span> = المفاهيم والتوجهات الأساسية اللازمة للقيام <b>بتصرفات مناسبة</b> في مجتمع المعلومات.','<span class="hl">Information Ethics</span> = the basic concepts and attitudes needed to <b>act properly</b> in an information society.')+
+   B('<div class="eg">✨ الفكرة: حتى لو <b>لا يوجد قانون</b> يمنع تصرفًا ما، يجب أن تتصرف <b>بأدب ومسؤولية</b> على الإنترنت.</div>','<div class="eg">✨ The idea: even if <b>no law</b> forbids something, you must behave <b>politely and responsibly</b> online.</div>')},
+  {c:'#2b59ff',ic:'📢',t:'٢) قبل أن تنشر… فكّر!',te:'2) Before you post… think!',
+   h:B('<b>٦ قواعد ذهبية عند نشر المعلومات:</b>','<b>6 golden rules when publishing information:</b>')+
+   `<ul class="chk">
+    <li>1️⃣ المعلومات على الإنترنت <b>تنتشر بسهولة</b> ولا <b>تختفي</b> بسهولة ← فكّر قبل النشر.<div class="en" dir="ltr">Information online spreads easily and doesn’t disappear easily → think before you post.</div></li>
+    <li>2️⃣ 🚫 لا تشارك صور أو فيديوهات <b>يملكها الآخرون</b> بدون إذن.<div class="en" dir="ltr">Don’t share photos/videos that others own without permission.</div></li>
+    <li>3️⃣ 🚫 لا تكشف <b>المعلومات الشخصية</b> لشخص آخر على الإنترنت.<div class="en" dir="ltr">Don’t leak another person’s personal information online.</div></li>
+    <li>4️⃣ 🚫 لا تنشر علنًا ما يملك غيرك <b>حقوق المؤلف (Copyright)</b> عليه بدون إذن.<div class="en" dir="ltr">Don’t publicly share content that others hold the copyright on without permission.</div></li>
+    <li>5️⃣ 🚫 لا تنتهك <b>خصوصية</b> الآخرين.<div class="en" dir="ltr">Don’t violate other people’s privacy.</div></li>
+    <li>6️⃣ 🚫 لا تنشر تعليقات <b>تشهير</b> ولا تتنمر إلكترونيًا (Cyber bullying).<div class="en" dir="ltr">Don’t post defamatory comments or engage in cyber bullying.</div></li></ul>`},
+  {c:'#12b76a',ic:'📍',t:'٣) العلامة الجغرافية',te:'3) Geotagging',
+   h:B('<span class="hl">العلامة الجغرافية (Geotagging)</span> = معلومات <b>خط الطول وخط العرض</b> تُحفظ داخل الصور والفيديوهات التي تلتقطها بالهاتف الذكي.','<span class="hl">Geotagging</span> = <b>longitude and latitude</b> information saved inside photos and videos taken with a smartphone.')+
+   B('<div class="eg">👍 مفيدة: تعرف أين تم التصوير.<br>⚠️ خطر: قد يعرف الآخرون <b>مكان بيتك</b> من صورة التقطتها في المنزل!</div>','<div class="eg">👍 Useful: you can tell where a photo was taken.<br>⚠️ Danger: others may find <b>where your home is</b> from a photo taken there!</div>')},
+  {c:'#f04438',ic:'🤥',t:'٤) المعلومات المضللة والشائعات',te:'4) Disinformation and Rumours',
+   h:B('<span class="hl">المعلومات المضللة والشائعات (Disinformation and rumours)</span> = معلومات <b>كاذبة</b> تُنشر <b>عمدًا</b>، أو شائعات <b>لا أساس لها</b>.','<span class="hl">Disinformation and rumours</span> = <b>false</b> information spread <b>on purpose</b>, or <b>baseless</b> rumours.')+
+   B('<div class="eg">⛔ لا تنشرها أبدًا — حتى لو كنت <b>مجهول الهوية</b>! تذكّر أن المعلومة الكاذبة لها خاصية <b>الاستمرارية</b>: تبقى ولا تُمحى.</div>','<div class="eg">⛔ Never spread them — even if you are <b>anonymous</b>! Remember false information has <b>persistence</b>: it stays and can’t be erased.</div>')},
+  {c:'#7b3ff2',ic:'📱',t:'٥) وسائل التواصل الاجتماعي',te:'5) Social Media',
+   h:B('<span class="hl">وسائل التواصل الاجتماعي (Social media)</span> = خدمات توفر <b>منصات</b> يتواصل فيها الأفراد مع بعضهم على الإنترنت (وتسمى أيضًا: خدمة الشبكة الاجتماعية SNS).','<span class="hl">Social media</span> = services that provide <b>platforms</b> where people communicate with each other online (also called: Social Networking Service, SNS).')+
+   B('<ul><li>👍 أداة ممتازة للتواصل، لكنها قد تصبح <b>خطيرة</b> إذا استُخدمت بشكل غير صحيح.</li><li>🧑‍🤝‍🧑 تذكّر: على الجانب الآخر <b>أشخاص حقيقيون</b> — شارك المعلومات مع مراعاة وجهة نظرهم.</li></ul>','<ul><li>👍 A great tool for communication, but it can become <b>dangerous</b> if misused.</li><li>🧑‍🤝‍🧑 Remember: there are <b>real people</b> on the other side — share information while considering their point of view.</li></ul>')},
+  {c:'#f0387a',ic:'⚠️',t:'٦) مشاكل الهواتف الذكية ووسائل التواصل',te:'6) Problems with Smartphones and Social Media',
+   h:`<div class="grid3">
+    <div class="mini" style="--mc:#f0387a"><div class="mic">🕹️</div><h4>إدمان الإنترنت<small>Internet addiction</small></h4><p>الانغماس المفرط في الإنترنت حتى <b>تتعطل حياتك اليومية</b> (الدراسة والعمل والصحة).</p><p class="en" dir="ltr">Being so absorbed in the Internet that <b>daily life is disrupted</b> (study, work, health).</p></div>
+    <div class="mini" style="--mc:#ff7a1a"><div class="mic">🚶📱</div><h4>استخدام الهاتف أثناء المشي<small>Using a smartphone while walking</small></h4><p>استخدام الهاتف وأنت تمشي — <b>خطر</b> عليك وعلى غيرك.</p><p class="en" dir="ltr">Using your phone while walking — <b>dangerous</b> for you and others.</p></div>
+    <div class="mini" style="--mc:#7b3ff2"><div class="mic">🕵️‍♂️</div><h4>الجريمة الإلكترونية<small>Cybercrime</small></h4><p>إساءة استخدام <b>الكمبيوتر والشبكات</b> في أنشطة إجرامية.</p><p class="en" dir="ltr">Misuse of <b>computers and networks</b> for criminal activities.</p></div>
+    <div class="mini" style="--mc:#2b59ff"><div class="mic">🎭</div><h4>انتحال الشخصية<small>Identity theft</small></h4><p>شخص <b>ينتحل شخصية</b> فرد أو مؤسسة لسرقة الهوية أو <b>كلمات المرور</b>.</p><p class="en" dir="ltr">Someone <b>pretends to be</b> a person or organization to steal identities or <b>passwords</b>.</p></div>
+    <div class="mini" style="--mc:#12b76a"><div class="mic">🔓</div><h4>تسريب المعلومات الشخصية<small>Leakage of personal information</small></h4><p>كشف معلومات شخصية <b>يجب أن تبقى سرية</b> لطرف ثالث.</p><p class="en" dir="ltr">Revealing personal information that <b>should stay secret</b> to a third party.</p></div>
+   </div>`},
+  {c:'#0fa3b1',ic:'📵',t:'٧) آداب استخدام الهاتف الذكي',te:'7) Smartphone Manners',
+   h:B('<ul><li>✅ أوقف الهاتف في أماكن مثل <b>السينما</b> و<b>المتاحف</b>.</li><li>❌ لا تستخدمه أثناء <b>القيادة</b> أو <b>المشي</b>.</li><li>❌ لا تكتب تعليقات سلبية عن الآخرين.</li><li>❌ لا ترسل صورتك لغريب قابلته على الإنترنت.</li></ul>','<ul><li>✅ Turn the phone off in places like <b>cinemas</b> and <b>museums</b>.</li><li>❌ Don’t use it while <b>driving</b> or <b>walking</b>.</li><li>❌ Don’t post negative comments about others.</li><li>❌ Don’t send your photo to a stranger you met online.</li></ul>')},
+  {c:'#12b76a',ic:'✅',t:'الخلاصة',te:'Summary',
+   h:`<ul class="chk">
+    <li>⚖️ أخلاقيات المعلومات = التصرف المناسب حتى لو لا يوجد قانون &nbsp;|&nbsp; <span dir="ltr">Ethics = proper behaviour even without laws</span></li>
+    <li>📢 فكّر قبل النشر: تنتشر ولا تختفي &nbsp;|&nbsp; <span dir="ltr">Think before posting: it spreads and stays</span></li>
+    <li>🚫 لا تشارك ما يملكه غيرك، ولا تكشف بياناتهم، ولا تتنمر &nbsp;|&nbsp; <span dir="ltr">Don’t share others’ property/data, don’t bully</span></li>
+    <li>📍 العلامة الجغرافية قد تكشف مكان بيتك &nbsp;|&nbsp; <span dir="ltr">Geotags can reveal your home</span></li>
+    <li>🤥 لا تنشر شائعات أو معلومات مضللة حتى بشكل مجهول &nbsp;|&nbsp; <span dir="ltr">No rumours, even anonymously</span></li>
+    <li>⚠️ ٥ مشاكل: إدمان – مشي بالهاتف – جريمة إلكترونية – انتحال – تسريب &nbsp;|&nbsp; <span dir="ltr">5 problems</span></li></ul>`}
+ ]
+}
+];
+
+/* ============ الشاشات ============ */
+const app=document.getElementById('app');
+function goHome(){
+  hideScore();
+  app.innerHTML=`
+  <div class="hero"><h1>الصف الأول الثانوي — الوحدة الأولى<small>Grade 1 Secondary — Unit 1 · Introduction to ICT</small></h1></div>
+  <div class="name-box" id="nameBox">
+    <label for="nm">✏️ اكتب اسمك أولًا<small>Write your name first</small></label>
+    <input id="nm" type="text" maxlength="40" placeholder="اسم الطالب / Student name" value="${escapeHtml(studentName)}" autocomplete="off">
+  </div>
+  <div class="lessons">
+    <button class="lbtn l1" onclick="openLesson(0)"><span class="ic">📊</span><h2>الدرس الأول</h2><p>المعلومات والوسائط</p><p class="en">Lesson 1 · Information &amp; Media</p><span class="cnt">${Q1.length} سؤال | ${Q1.length} questions</span></button>
+    <button class="lbtn l2" onclick="openLesson(1)"><span class="ic">🛡️</span><h2>الدرس الثاني</h2><p>أخلاقيات المعلومات</p><p class="en">Lesson 2 · Information Ethics</p><span class="cnt">${Q2.length} سؤال | ${Q2.length} questions</span></button>
+  </div>`;
+  window.scrollTo(0,0);
+}
+function escapeHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function needName(){
+  const v=(document.getElementById('nm')||{}).value||studentName;
+  studentName=(v||'').trim();
+  if(!studentName){ const b=document.getElementById('nameBox'); b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); sndNO(); document.getElementById('nm').focus(); return false; }
+  return true;
+}
+function openLesson(i,tab){
+  if(!studentName && !needName()) return;
+  if(document.getElementById('nm')) { if(!needName()) return; }
+  sndClick(); showLesson(i,tab||'ex');
+}
+function showLesson(i,tab){
+  hideScore();
+  const L=LESSONS[i];
+  let html=`<div class="topbar"><button class="back" onclick="goHome()">↩ الرئيسية | Home</button><div class="hello">👋 أهلًا ${escapeHtml(studentName)}</div></div>
+   <div class="hero" style="margin-bottom:10px"><h1>${L.icon} ${L.name}: ${L.title}<small>${L.nameEn}: ${L.titleEn}</small></h1></div>
+   <div class="tabs"><button class="tab ${tab==='ex'?'on':''}" onclick="showLesson(${i},'ex')">📖 الشرح<small>Explanation</small></button>
+   <button class="tab ${tab==='q'?'on':''}" onclick="showLesson(${i},'q')">📝 الأسئلة (${L.Q.length})<small>Questions</small></button></div>`;
+  if(tab==='ex'){
+    L.cards.forEach((c,k)=>{
+      html+=`<section class="ex" style="--c:${c.c};animation-delay:${k*0.06}s"><h3><span class="ic">${c.ic}</span>${c.t}<small>${c.te}</small></h3>${c.h}</section>`;
+    });
+    html+=`<button class="gobtn" onclick="showLesson(${i},'q')">📝 ابدأ أسئلة هذا الدرس<small>Start this lesson’s questions</small></button>`;
+  } else {
+    html+=`<div class="card" style="text-align:center"><div style="font-size:4rem">📝</div>
+     <h2 style="font-size:1.6rem;font-weight:900">أسئلة ${L.name}</h2>
+     <p class="ar" style="font-size:1.1rem">${L.Q.length} سؤالًا من الكتاب (موضوعية فقط) — الأسئلة والاختيارات بالعربية والإنجليزية.<br>🎵 ستسمع صوتًا وتشاهد مؤثرات عند الإجابة. وفي النهاية <b>ترسل نتيجتك لواتساب</b>.</p>
+     <p class="en" dir="ltr">${L.Q.length} objective questions from the book — Arabic + English. You’ll hear sounds and see effects for right/wrong answers, and at the end you can <b>send your result to WhatsApp</b>.</p>
+     <button class="gobtn" onclick="startQuiz(${i})">▶️ ابدأ الاختبار<small>Start the quiz</small></button></div>`;
+  }
+  app.innerHTML=html; window.scrollTo(0,0);
+}
+
+/* ============ الاختبار ============ */
+let S=null;
+function startQuiz(i){
+  audio(); sndClick();
+  S={i:i,L:LESSONS[i],idx:0,score:0,wrong:[],answered:false,sel:[]};
+  showScore(); renderQ();
+}
+function showScore(){ const e=document.getElementById('livescore'); e.style.display='block'; updScore(); }
+function hideScore(){ document.getElementById('livescore').style.display='none'; }
+function updScore(){ if(S) document.getElementById('livescore').textContent='⭐ '+S.score+' / '+S.L.Q.length; }
+function renderQ(){
+  const L=S.L, q=L.Q[S.idx], n=L.Q.length;
+  S.answered=false; S.sel=[];
+  const letters=q.letters||AL;
+  let opts='';
+  q.opts.forEach((o,k)=>{
+    const badge=(q.noLetter)?(q.t==='tf'?(k===0?'✓':'✗'):(k+1)):letters[k];
+    opts+=`<button class="opt ${q.t==='tf'?'tfbtn':''}" data-k="${k}" onclick="pick(${k})"><span class="bd">${badge}</span><span class="tx"><span class="oar">${o.ar}</span><span class="oen">${o.en}</span></span></button>`;
+  });
+  const hint=q.t==='mu'?`<div class="hint">☑️ اختر كل الإجابات الصحيحة ثم اضغط «تأكيد» &nbsp;|&nbsp; <span dir="ltr">Select all correct answers, then press “Check”</span></div>`:'';
+  app.innerHTML=`
+   <div class="topbar"><button class="back" onclick="if(confirm('الخروج من الاختبار؟ / Leave the quiz?')){showLesson(${S.i},'q')}">↩ خروج | Exit</button><div class="hello">👋 ${escapeHtml(studentName)}</div></div>
+   <div class="qhead"><span>${L.icon} ${L.name}</span><span>سؤال ${S.idx+1} من ${n} &nbsp;|&nbsp; <span dir="ltr">Q ${S.idx+1}/${n}</span></span></div>
+   <div class="pbar"><i style="width:${(S.idx/n)*100}%"></i></div>
+   <div class="card qcard" id="qc">
+     <span class="qtag">${q.src}</span>
+     ${q.ctx?`<div class="ctx"><div class="ar">${q.ctx.ar}</div><div class="en" dir="ltr">${q.ctx.en}</div></div>`:''}
+     <div class="qtxt">${q.ar}</div><div class="qen">${q.en}</div>
+     ${hint}
+     <div class="opts ${q.two?'two':''}" id="opts">${opts}</div>
+     ${q.t==='mu'?`<div class="nextrow"><button class="btn green full" id="chk" onclick="checkMulti()">✔ تأكيد الإجابة<small>Check answer</small></button></div>`:''}
+     <div id="fbx"></div>
+   </div>`;
+  window.scrollTo(0,0);
+  if(!showEN) document.body.classList.add('noen');
+}
+function pick(k){
+  if(S.answered) return;
+  const q=S.L.Q[S.idx];
+  if(q.t==='mu'){
+    sndClick();
+    const p=S.sel.indexOf(k); if(p>=0) S.sel.splice(p,1); else S.sel.push(k);
+    document.querySelectorAll('#opts .opt').forEach(b=>b.classList.toggle('sel',S.sel.includes(+b.dataset.k)));
+    return;
+  }
+  S.answered=true;
+  const ok=(k===q.ans);
+  const btns=document.querySelectorAll('#opts .opt');
+  btns.forEach(b=>{b.classList.add('lock');});
+  btns[k].classList.add(ok?'ok':'no');
+  if(!ok) btns[q.ans].classList.add('miss');
+  finishAnswer(ok,q, ok?null:q.opts[q.ans]);
+}
+function checkMulti(){
+  if(S.answered) return;
+  const q=S.L.Q[S.idx];
+  if(!S.sel.length){ const c=document.getElementById('qc'); c.classList.remove('shake'); void c.offsetWidth; c.classList.add('shake'); sndNO(); return; }
+  S.answered=true;
+  const correct=q.ans.slice().sort().join(',');
+  const mine=S.sel.slice().sort().join(',');
+  const ok=(correct===mine);
+  document.querySelectorAll('#opts .opt').forEach(b=>{
+    const k=+b.dataset.k; b.classList.add('lock'); b.classList.remove('sel');
+    const isC=q.ans.includes(k), isS=S.sel.includes(k);
+    if(isC&&isS) b.classList.add('ok'); else if(!isC&&isS) b.classList.add('no'); else if(isC&&!isS) b.classList.add('miss');
+  });
+  document.getElementById('chk').classList.add('hidden');
+  finishAnswer(ok,q, ok?null:{ar:q.ans.map(k=>q.opts[k].ar).join(' ، '),en:q.ans.map(k=>q.opts[k].en).join(', ')});
+}
+function finishAnswer(ok,q,corr){
+  if(ok){ S.score++; sndOK(); confetti(90,false); emojiPop(['🎉','😃','🌟','👏','🥳'][Math.floor(Math.random()*5)]); }
+  else { S.wrong.push(S.idx+1); sndNO(); redFlash(); emojiPop(['😢','😞','🙈','💔'][Math.floor(Math.random()*4)]); }
+  updScore();
+  const last=(S.idx===S.L.Q.length-1);
+  const msgOK=['أحسنت! 🎉','ممتاز! 🌟','رائع جدًا! 👏','إجابة صحيحة! ✅'], msgOKen=['Well done!','Excellent!','Great job!','Correct!'];
+  const r=Math.floor(Math.random()*4);
+  document.getElementById('fbx').innerHTML=`
+   <div class="fb ${ok?'good':'bad'}">
+     <div class="big">${ok?msgOK[r]:'إجابة خاطئة 😢'} <small>${ok?msgOKen[r]:'Wrong answer'}</small></div>
+     ${ok?'':`<div class="ca">✅ الإجابة الصحيحة: ${corr.ar} <div class="en" dir="ltr" style="margin:4px 0 0">Correct answer: ${corr.en}</div></div>`}
+     <div class="exl">💡 ${q.ea}</div><div class="exl en" dir="ltr">💡 ${q.ee}</div>
+   </div>
+   <div class="nextrow"><button class="btn full" onclick="${last?'showResult()':'nextQ()'}">${last?'🏁 عرض النتيجة':'التالي ⬅️'}<small>${last?'Show my result':'Next'}</small></button></div>`;
+  document.getElementById('fbx').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function nextQ(){ sndClick(); S.idx++; renderQ(); }
+
+/* ============ النتيجة + واتساب ============ */
+function grade(p){ if(p>=90) return ['ممتاز 🏆','Excellent']; if(p>=75) return ['جيد جدًا 🌟','Very good']; if(p>=60) return ['جيد 👍','Good']; if(p>=50) return ['مقبول 🙂','Pass']; return ['يحتاج إلى مراجعة 📚','Needs review']; }
+function showResult(){
+  hideScore();
+  const n=S.L.Q.length, sc=S.score, p=Math.round(sc/n*100), g=grade(p);
+  const stars=p>=90?'⭐⭐⭐':p>=70?'⭐⭐':p>=50?'⭐':'💪';
+  if(p>=50){ sndWin(); confetti(220,true); setTimeout(()=>confetti(160,true),500); } else { sndLose(); }
+  app.innerHTML=`
+   <div class="card res">
+     <div class="trophy">${p>=90?'🏆':p>=70?'🥇':p>=50?'🎖️':'📚'}</div>
+     <h2>${escapeHtml(studentName)}</h2>
+     <p class="ar">نتيجتك في ${S.L.name}: ${S.L.title}</p>
+     <p class="en" dir="ltr">Your result in ${S.L.nameEn}: ${S.L.titleEn}</p>
+     <div class="sc">${sc} / ${n}</div>
+     <div class="sc" style="font-size:2rem">${p}%</div>
+     <div class="stars">${stars}</div>
+     <div class="msg">${g[0]} <span dir="ltr" style="font-size:1rem">(${g[1]})</span></div>
+     ${S.wrong.length?`<div class="wrong">❌ الأسئلة الخاطئة: ${S.wrong.join(' ، ')}<div class="en" dir="ltr" style="margin:4px 0 0">Wrong questions: ${S.wrong.join(', ')}</div></div>`:`<div class="wrong" style="background:#e9fbf1">🎯 كل إجاباتك صحيحة! | All answers correct!</div>`}
+     <div class="btns">
+       <button class="btn wa" onclick="sendWA()">📲 إرسال النتيجة إلى واتساب<small>Send my result to WhatsApp</small></button>
+       <button class="btn" onclick="startQuiz(${S.i})">🔄 إعادة الاختبار<small>Try again</small></button>
+       <button class="btn green" onclick="showLesson(${S.i},'ex')">📖 مراجعة الشرح<small>Review the explanation</small></button>
+       <button class="btn grey" onclick="goHome()">🏠 الرئيسية<small>Home</small></button>
+     </div>
+   </div>`;
+  window.scrollTo(0,0);
+}
+function sendWA(){
+  const n=S.L.Q.length, sc=S.score, p=Math.round(sc/n*100), g=grade(p);
+  const lines=[
+    '📊 نتيجة اختبار — منصة محترف (Mohtarf)',
+    '👤 الاسم: '+studentName,
+    '🏫 الصف: الأول الثانوي — الوحدة الأولى',
+    '📖 '+S.L.name+': '+S.L.title+' ('+S.L.titleEn+')',
+    '✅ الدرجة: '+sc+' من '+n+' ('+p+'%)',
+    '🏅 التقدير: '+g[0]+' / '+g[1],
+    S.wrong.length?('❌ الأسئلة الخاطئة: '+S.wrong.join('، ')):'🎯 كل الإجابات صحيحة'
+  ];
+  const url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(lines.join('\n'));
+  window.open(url,'_blank');
+}
+
+goHome();
+</script>
+</body>
+</html>
